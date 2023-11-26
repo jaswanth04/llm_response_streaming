@@ -24,7 +24,7 @@ def start_generation():
     thread.start()
 
 
-async def number_generator():
+async def serve_data():
 
     start_generation()
 
@@ -35,7 +35,7 @@ async def number_generator():
             value = streamer_queue.get()
             yield str(value)
             streamer_queue.task_done()
-            await asyncio.sleep(2)
+        await asyncio.sleep(2)
 
 
 @app.get('/put-item/')
@@ -45,4 +45,4 @@ async def add_item(item: int):
 
 @app.get('/query-stream/')
 async def stream():
-    return StreamingResponse(number_generator(), media_type='text/event-stream')
+    return StreamingResponse(serve_data(), media_type='text/event-stream')

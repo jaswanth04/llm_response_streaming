@@ -1,9 +1,10 @@
 import requests
 import time
 
-url = "http://127.0.0.1:8000/query-stream/"
+url = "http://127.0.0.1:8000/query-stream/?query=Who are you?"
+# url = "http://127.0.0.1:8000/query-stream/"
 
-end = 1
+
 
 
 with requests.get(url, stream=True) as r:

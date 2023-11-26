@@ -1,3 +1,4 @@
 notebooks/outputs_7b
 notebooks/results
 notebooks/wandb
+notebooks/*
