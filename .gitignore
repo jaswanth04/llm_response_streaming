@@ -1,4 +1,8 @@
 notebooks/outputs_7b
 notebooks/results
 notebooks/wandb
-notebooks/*
+notebooks/finetune.ipynb
+
+.env
+
+src/__pycache__
