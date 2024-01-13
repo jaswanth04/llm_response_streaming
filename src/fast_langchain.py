@@ -8,7 +8,7 @@ from threading import Thread
 from dotenv import load_dotenv
 from queue import Queue
 from langchain_openai import ChatOpenAI
-from langchain.schema.messages import BaseMessage, HumanMessage
+from langchain.schema.messages import HumanMessage
 
 load_dotenv()
 

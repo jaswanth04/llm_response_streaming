@@ -1,12 +1,7 @@
 from langchain.callbacks.base import BaseCallbackHandler
-from time import perf_counter
-from langchain.schema.messages import BaseMessage, HumanMessage
+from langchain.schema.messages import BaseMessage
 from langchain.schema import LLMResult
 from typing import Dict, List, Any
-from langchain_openai import ChatOpenAI
-from dotenv import load_dotenv
-
-load_dotenv()
 
 class MyCustomHandler(BaseCallbackHandler):
     def __init__(self, queue) -> None:
