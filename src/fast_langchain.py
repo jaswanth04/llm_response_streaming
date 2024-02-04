@@ -21,7 +21,8 @@ my_handler = MyCustomHandler(streamer_queue)
 llm = ChatOpenAI(streaming=True, callbacks=[my_handler], temperature=0.7)
 
 def generate(query):
-    llm.invoke([HumanMessage(content=query)])
+    response = llm.invoke([HumanMessage(content=query)])
+    print(response)
 
 def start_generation(query):
 
