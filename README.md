@@ -7,6 +7,7 @@ This repo contains information of how to stream the responses of a fine tune LLM
 For information or a tutorial on how a streaming works, please go through the following articles:  
 - [Streaming of Locally deployed model](https://medium.com/@jaswanth04/streaming-llm-responses-using-fastapi-deb575554397)
 - [Streaming using Langchain](https://medium.com/stackademic/streaming-responses-from-llm-using-langchain-fastapi-329f588d3b40)
+- [Contextualization using History](https://medium.com/@jaswanth04/history-based-contextualization-in-llm-deployed-as-a-backend-service-fastapi-and-5a1759fdd32e)
 
 ### Fast API streaming
 
@@ -20,7 +21,14 @@ Go to the file [src/fast_langchain.py](https://github.com/jaswanth04/llm_respons
 A custom handler was created in [src/handlers.py](https://github.com/jaswanth04/llm_response_streaming/blob/main/src/handlers.py)
 
 ### History Streaming
-Go the the file 
+Go the the file [src/fast_llm_history.py](https://github.com/jaswanth04/llm_response_streaming/blob/main/src/fast_llm_history.py) for history based retrieval. 
+We are using Mongodb to store the history, for it to work, we need to start the mongo server. If you have installed a mongo server locally, you can bring that up by 
+
+```
+sudo systemctl start mongod
+```
+
+For anyone to use this, please get the proper url for the mongo connection, create the necessary collections and db and modify the [src/db_utils.py](https://github.com/jaswanth04/llm_response_streaming/blob/main/src/db_utils.py) file accordingly.
 
 ### Running 
 
